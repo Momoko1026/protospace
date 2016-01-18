@@ -29,9 +29,9 @@
 ### Association
 - belongs to: prototype
 ### Colums
-- main_thumbnail :text
-- sub_thumbnail :text
+- image :text
 - prototype_id :integer
+- property
 
 ## Comment
 ### Association
