@@ -19,8 +19,7 @@
 
 ### Colums
 - title :text
-- main_thumbnail :text
-- sub_thumbnails :text
+- captured_images :text
 - catchcopy :text
 - concept :text
 - like_count :integer
@@ -43,7 +42,3 @@
 - prototype_id :integer
 - user_id: integer
 
-## Prototypes_tages
-### Colums
-- prototype_id :integer
-- Tag_id :integer
