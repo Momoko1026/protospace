@@ -9,39 +9,31 @@
 - avatar_image :string
 - password :string
 - profile :text
-- position :string
-- occupation :string
-- prototype_id :integer
+- works :string
 
 ## Prototype
 ### Association
 - belongs_to: user
 - has_many: likes
 - has_many: comments
-- has_many: prototypes_tags
-- has_many: tags through: :prototypes_tags
+
 ### Colums
 - title :text
 - main_thumbnail :text
 - sub_thumbnails :text
 - catchcopy :text
 - concept :text
+- like_count :integer
 - user_id :integer
-- like_id :integer
-- comment_id :integer
-- tag_id :integer
-
-## Prototypes_tags
-### Association
-- belongs_to :tag
-- belongs_to :prototype
 
 ## Comment
 ### Association
 - belongs_to: prototype
+- belongs_to: user
 ### Colums
 - comment :text
 - prototype_id :integer
+- user_id :integer
 
 ## Like
 ### Association
@@ -50,13 +42,6 @@
 ### Colums
 - prototype_id :integer
 - user_id: integer
-
-## Tag
-### Association
-- has_many: prototypes_tags
-- has_many: prototypes through: :prototypes_tags
-### Colums
-- tag_name :string
 
 ## Prototypes_tages
 ### Colums
