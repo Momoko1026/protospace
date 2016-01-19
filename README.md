@@ -1,55 +1,52 @@
-Database
+# Database
 
-##User
-#has_many: prototypes
+## User
+### Association
+- has_many: prototypes
+### Colums
+- nickname :string
+- email :string
+- avatar_image :string
+- password :string
+- profile :text
+- works :string
 
-nickname :string
-email :string
-avatar_image :
-password :string
-profile :text
-position :string
-occupation :string
-prototype_id :integer
+## Prototype
+### Association
+- belongs_to: user
+- has_many: likes
+- has_many: comments
+- has_many: captured_images
+### Colums
+- title :text
+- catchcopy :text
+- concept :text
+- like_count :integer
+- user_id :integer
 
-##Prototype
-#belongs_to: user
-#has_many: likes
-#has_many: comments
-#has_many: prototypes_tags
-#has_many: tags through: :prototypes_tags
 
-title :text
-main_thumbnail :text
-sub_thumbnails :text
-catchcopy :text
-concept :text
-user_id :integer
-like_id :integer
-comment_id :integer
-tag_id :integer
+## Captured_images
+### Association
+- belongs to: prototype
+### Colums
+- image :text
+- prototype_id :integer
+- property :integer
 
-##Prototypes_tags
-belongs_to :tag
-belongs_to :prototype
+## Comment
+### Association
+- belongs_to: prototype
+- belongs_to: user
+### Colums
+- comment :text
+- prototype_id :integer
+- user_id :integer
 
-##Comment
-#belongs_to: prototype
-comment :text
-prototype_id :integer
+## Like
+### Association
+- belongs-to: prototype
+- belongs_to: user
+### Colums
+- prototype_id :integer
+- user_id: integer
 
-##Like
-#belongs-to: prototype
-#belongs_to: user
-prototype_id :integer
-user_id: integer
-
-##Tag
-#has_many: prototypes_tags
-#has_many: prototypes through: :prototypes_tags
-
-tag_name :string
-
-##Prototypes_tages
-prototype_id :integer
-Tag_id :integer
