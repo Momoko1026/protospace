@@ -31,7 +31,7 @@
 ### Colums
 - image :text
 - prototype_id :integer
-- property
+- property :integer
 
 ## Comment
 ### Association
